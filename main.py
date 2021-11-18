@@ -33,7 +33,6 @@ def end():
 def for_canonical(f):
     return lambda k: f(l.canonical(k))
 
-hk = HotKey(HotKey.parse("p"), song)
-hk2 = HotKey(HotKey.parse("<ctrl>+l"), end)
+hk = HotKey(HotKey.parse("<ctrl>+<alt>+p"), song)
 
 with Listener(on_press=for_canonical(hk.press), on_release=for_canonical(hk.release)) as l: l.join()
